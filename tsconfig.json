@@ -6,6 +6,6 @@
         "outDir": "be-dist",
         "module": "CommonJS"
     },
-    "includes": ["./be-src/**/*.ts"],
+    "include": ["./be-src/**/*.ts"],
     "exclude": ["./fe-src/**/*.ts"]
 }
