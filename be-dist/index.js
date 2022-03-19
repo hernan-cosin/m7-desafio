@@ -22,15 +22,15 @@ app.get("/test", async (req, res) => {
     res.json({ test: true });
 });
 app.post("/email-check", async (req, res) => {
-    const response = await user_controller_1.emailCheck(req.body.email);
+    const response = await (0, user_controller_1.emailCheck)(req.body.email);
     res.json({ userFound: response });
 });
 app.post("/auth", async (req, res) => {
-    const response = await user_controller_1.creteUser(req.body);
+    const response = await (0, user_controller_1.creteUser)(req.body);
     res.json({ response });
 });
 app.post("/auth/token", async (req, res) => {
-    const result = await user_controller_1.AuthToken(req.body);
+    const result = await (0, user_controller_1.AuthToken)(req.body);
     if (result.verified == true) {
         res.json({ verified: result.verified, token: result.token });
     }
@@ -39,7 +39,7 @@ app.post("/auth/token", async (req, res) => {
     }
 });
 app.put("/user", user_controller_1.middleware, async (req, res) => {
-    const result = await user_controller_1.updateUser(req.body);
+    const result = await (0, user_controller_1.updateUser)(req.body);
     res.json(result);
 });
 app.get("/me", user_controller_1.middleware, async (req, res) => {
@@ -65,7 +65,7 @@ app.post("/pet", user_controller_1.middleware, async (req, res) => {
             petZone: req.body.petZone,
         });
         const userId = req._userInfo.id;
-        const response = await pet_controler_1.createPet(req.body, userId);
+        const response = await (0, pet_controler_1.createPet)(req.body, userId);
         res.json({ response });
     }
     catch (e) {
