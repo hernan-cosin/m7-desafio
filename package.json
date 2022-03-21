@@ -23,6 +23,10 @@
     "dev:be": "nodemon --watch ./be-src/index.ts --exec ts-node ./be-src/index.ts",
     "build:fe": "parcel build --dist-dir ./fe-dist",
     "build:be": "tsc ",
+<<<<<<< HEAD
+=======
+    "build:dev": "npm run build:fe && npm run build:be",
+>>>>>>> dev
     "start": "node ./be-dist"
   },
   "devDependencies": {
